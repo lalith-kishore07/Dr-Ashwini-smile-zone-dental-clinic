@@ -39,6 +39,7 @@ export default function Hero() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="cta-button shadow-lg shadow-navy/10"
+              style={{ borderRadius: '4px' }}
             >
               Book Consultation
               <ArrowRight className="w-4 h-4 inline-block ml-2 group-hover:translate-x-1 transition-transform" />

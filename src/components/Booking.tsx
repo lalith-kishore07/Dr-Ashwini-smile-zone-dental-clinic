@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { MessageSquare, Calendar, User, ClipboardList, Send } from 'lucide-react';
+import { Calendar, Send } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 
 export default function Booking() {
@@ -48,15 +48,6 @@ export default function Booking() {
                 <div>
                   <h4 className="font-bold text-navy text-sm uppercase tracking-widest mb-2">Flexible Timings</h4>
                   <p className="text-sm text-muted leading-relaxed">Monday - Saturday: 10:00 AM - 8:00 PM <br />Sundays by Appointment only.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-6 group">
-                <div className="w-12 h-12 rounded-sm bg-gold text-white flex items-center justify-center shrink-0 transition-transform group-hover:-rotate-12">
-                  <MessageSquare className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-navy text-sm uppercase tracking-widest mb-2">Priority Support</h4>
-                  <p className="text-sm text-muted leading-relaxed">Direct line to Dr. Ashwini for elite patient care and coordination via our secure WhatsApp portal.</p>
                 </div>
               </div>
             </div>
