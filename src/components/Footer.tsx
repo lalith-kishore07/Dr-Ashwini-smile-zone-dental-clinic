@@ -73,8 +73,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[9px] text-pearl/20 tracking-[4px] uppercase font-bold">
-            © {currentYear} Smile Zone Clinic. Premium Dental Excellence.
+          <p className="text-[11px] text-[#fafffd] tracking-[4px] uppercase font-bold">
+            © {currentYear} Smile Zone Clinic.
           </p>
           <div className="flex gap-8 text-[9px] uppercase tracking-[3px] text-pearl/20 font-bold">
             <a href="#" className="hover:text-pearl transition-colors">Privacy</a>

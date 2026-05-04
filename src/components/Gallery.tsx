@@ -5,24 +5,24 @@ import { X } from 'lucide-react';
 const cases = [
   { 
     id: 1, 
+    title: 'Porcelain Veneers', 
+    desc: 'Full Smile Reconstruction', 
+    before: 'https://images.unsplash.com/photo-1601706859560-27634f3c26dc?auto=format&fit=crop&q=80&w=800', 
+    after: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=800' 
+  },
+  { 
+    id: 2, 
     title: 'Clear Aligners', 
-    desc: 'Invisalign & Premium Alignment', 
+    desc: 'Invisible Orthodontics', 
     before: 'https://images.unsplash.com/photo-1629909608185-42f4b7a74424?auto=format&fit=crop&q=80&w=800', 
     after: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800' 
   },
   { 
-    id: 2, 
-    title: 'Bespoke Veneers', 
-    desc: 'Handcrafted Porcelain Artistry', 
-    before: 'https://images.unsplash.com/photo-1601706859560-27634f3c26dc?auto=format&fit=crop&q=80&w=800', 
-    after: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=800'
-  },
-  { 
     id: 3, 
-    title: 'Teeth Whitening', 
-    desc: 'Advanced Boutique Whitening', 
-    before: 'https://images.unsplash.com/photo-1473215206977-849924403061?auto=format&fit=crop&q=80&w=800', 
-    after: 'https://images.unsplash.com/photo-1606811841660-1b51e9fd27ff?auto=format&fit=crop&q=80&w=800'
+    title: 'Composite Bonding', 
+    desc: 'Precise Gap Closure', 
+    before: 'https://images.unsplash.com/photo-1598256990794-277630c76878?auto=format&fit=crop&q=80&w=800', 
+    after: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800' 
   },
 ];
 
@@ -38,13 +38,6 @@ export default function Gallery() {
     <section id="gallery" className="py-24 bg-navy text-pearl overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-24">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="section-title-accent inline-flex mb-8"
-          >
-            Smile Gallery
-          </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
