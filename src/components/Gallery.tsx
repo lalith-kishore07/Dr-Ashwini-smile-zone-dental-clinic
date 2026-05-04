@@ -34,24 +34,6 @@ export default function Gallery() {
     setAllCases(allCases.filter(c => c.id !== id));
   };
 
-  const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const newCase = {
-          id: Date.now(),
-          title: 'New Transformation',
-          desc: 'Recently Added Case',
-          before: reader.result as string,
-          after: reader.result as string, // For demo, use same image
-        };
-        setAllCases([newCase, ...allCases]);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   return (
     <section id="gallery" className="py-24 bg-navy text-pearl overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -78,13 +60,6 @@ export default function Gallery() {
           >
             Discover the artistry and precision behind every successful treatment at Smile Zone.
           </motion.p>
-          
-          <div className="flex justify-center mb-12">
-            <label className="cursor-pointer px-8 py-3 border border-gold/30 text-gold text-xs uppercase tracking-widest font-bold rounded-sm hover:bg-gold hover:text-navy transition-all">
-              Upload New Case
-              <input type="file" className="hidden" onChange={handleUpload} accept="image/*" />
-            </label>
-          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
