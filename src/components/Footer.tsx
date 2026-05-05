@@ -2,8 +2,6 @@ import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, Instagram, Facebook, Calendar } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-navy text-pearl pt-24 pb-12 border-t border-gold/10">
       <div className="max-w-7xl mx-auto px-6">
@@ -73,12 +71,12 @@ export default function Footer() {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[11px] text-[#fafffd] tracking-[4px] uppercase font-bold">
-            © {currentYear} Smile Zone Clinic.
+          <p className="text-[9px] text-[#515855] h-8 flex items-center tracking-[4px] uppercase font-bold">
+            © Copyrights 2026 Smile Zone Clinic. All Rights Reserved
           </p>
-          <div className="flex gap-8 text-[9px] uppercase tracking-[3px] text-pearl/20 font-bold">
-            <a href="#" className="hover:text-pearl transition-colors">Privacy</a>
-            <a href="#" className="hover:text-pearl transition-colors">Compliance</a>
+          <div className="flex gap-8 text-[9px] uppercase tracking-[3px] font-bold">
+            <a href="#" className="text-[#515855] hover:text-pearl transition-colors">Privacy</a>
+            <a href="#" className="text-[#515855] hover:text-pearl transition-colors">Compliance</a>
           </div>
         </div>
       </div>
