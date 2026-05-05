@@ -1,26 +1,19 @@
 import { motion } from 'motion/react';
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
 
 const cases = [
   { 
     id: 1, 
-    title: 'Porcelain Veneers', 
-    desc: 'Full Smile Reconstruction', 
     before: 'https://images.unsplash.com/photo-1601706859560-27634f3c26dc?auto=format&fit=crop&q=80&w=800', 
     after: 'https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&q=80&w=800' 
   },
   { 
     id: 2, 
-    title: 'Clear Aligners', 
-    desc: 'Invisible Orthodontics', 
     before: 'https://images.unsplash.com/photo-1629909608185-42f4b7a74424?auto=format&fit=crop&q=80&w=800', 
     after: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&q=80&w=800' 
   },
   { 
     id: 3, 
-    title: 'Composite Bonding', 
-    desc: 'Precise Gap Closure', 
     before: 'https://images.unsplash.com/photo-1598256990794-277630c76878?auto=format&fit=crop&q=80&w=800', 
     after: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=800' 
   },
@@ -28,11 +21,6 @@ const cases = [
 
 export default function Gallery() {
   const [hoveredCase, setHoveredCase] = useState<number | null>(null);
-  const [allCases, setAllCases] = useState(cases);
-
-  const handleRemove = (id: number) => {
-    setAllCases(allCases.filter(c => c.id !== id));
-  };
 
   return (
     <section id="gallery" className="py-24 bg-navy text-pearl overflow-hidden">
@@ -56,7 +44,7 @@ export default function Gallery() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {allCases.map((c, i) => (
+          {cases.map((c, i) => (
             <motion.div
               key={c.id}
               initial={{ opacity: 0, scale: 0.98 }}
@@ -69,7 +57,7 @@ export default function Gallery() {
               {/* Before Overlay */}
               <img 
                 src={c.before} 
-                alt={`${c.title} Before`}
+                alt="Before Transformation"
                 className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${hoveredCase === c.id ? 'opacity-0' : 'opacity-100'}`}
                 referrerPolicy="no-referrer"
               />
@@ -77,33 +65,15 @@ export default function Gallery() {
               {/* After Image */}
               <img 
                 src={c.after} 
-                alt={`${c.title} After`}
+                alt="After Transformation"
                 className="absolute inset-0 w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
 
-              <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                {/* Remove Button */}
-                <button 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    handleRemove(c.id);
-                  }}
-                  className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-red-500/80 rounded-full transition-colors group/remove"
-                  title="Remove Case"
-                >
-                  <X size={16} className="text-pearl group-hover/remove:scale-110 transition-transform" />
-                </button>
-
-                <div className="text-center p-8">
-                  <span className="text-[10px] tracking-[4px] text-gold uppercase font-bold mb-4 block">After Treatment</span>
-                  <button className="px-6 py-2 border border-gold text-gold text-[11px] uppercase tracking-widest font-bold rounded-sm">View Analysis</button>
-                </div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               </div>
               
-              <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-navy/90 to-transparent">
-                <h3 className="text-xl font-serif mb-1">{c.title}</h3>
-                <p className="text-sm text-pearl/40 uppercase tracking-widest text-[10px]">{c.desc}</p>
+              <div className="absolute bottom-0 left-0 p-8 w-full">
               </div>
             </motion.div>
           ))}
